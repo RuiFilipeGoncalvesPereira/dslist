@@ -1,6 +1,7 @@
 package com.ruipereira.dslist.dto.GameMinDTO;
 
 import com.ruipereira.dslist.entities.Game;
+import com.ruipereira.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -20,6 +21,14 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgURL = entity.getImgURL();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgURL = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
 	}
 
 	public Long getId() {
